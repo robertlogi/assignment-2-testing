@@ -16,8 +16,7 @@ Another task for you is to add type definition to the `dateUtils.ts` file. Pleas
 ## Prerequisite
 
 Make sure you have Node v18 installed before starting the assignment.
-* Clone this repo and delete the `.git` folder and run `git init` to create your own private repository
-* Or press Use this Template and create a new repository using this template repo
+* Select "Use this Template" and create a new repository using this as a template repo
 
 ## Setup
 
