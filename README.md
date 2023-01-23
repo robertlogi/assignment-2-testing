@@ -24,9 +24,8 @@ Make sure you have Node v18 installed before starting the assignment.
 
 ## Commands
 * `npm run test`
-    - This runs the test suite once
-* `npm run test:watch`
-    - This will watch for any changes in the test suite and run again when changes are made
+    - This runs the test suite
+
 
 ------------------
 
