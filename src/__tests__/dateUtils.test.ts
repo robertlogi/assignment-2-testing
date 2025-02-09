@@ -86,18 +86,18 @@ describe("Date Utils", () => {
       expect(isWithinRange(date, from, to)).toBe(false);
     });
 
-    it("should return false if date lies on the lower bounds of the range", () => {
+    it("should return true if date lies on the lower bounds of the range", () => {
       const date = new Date("2025-01-01");
       const from = new Date("2025-01-01");
       const to = new Date("2025-03-01");
-      expect(isWithinRange(date, from, to)).toBe(false);
+      expect(isWithinRange(date, from, to)).toBe(true);
     });
 
-    it("should return false if date lies on the upper bounds of the range", () => {
+    it("should return true if date lies on the upper bounds of the range", () => {
       const date = new Date("2025-03-01");
       const from = new Date("2025-01-01");
       const to = new Date("2025-03-01");
-      expect(isWithinRange(date, from, to)).toBe(false);
+      expect(isWithinRange(date, from, to)).toBe(true);
     });
 
   });
