@@ -19,8 +19,8 @@ jobs:
         with:
           node-version: '18'
 
-      - name: Install dependencies
-        run: npm install 
+      - name: Clean and reinstall dependencies
+        run: rm -rf node_modules package-lock.json && npm install
 
       - name: Install TypeScript
         run: npm install --save-dev typescript
@@ -42,5 +42,4 @@ jobs:
 
       - name: Publish to GitHub Packages
         run: npm publish
-        # env:
-        #   NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
