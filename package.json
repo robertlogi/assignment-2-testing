@@ -2,6 +2,7 @@
   "name": "@robertlogi/assignment-2-testing",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "scripts": {
     "prettier-check": "prettier --check .",
     "test": "vitest"
@@ -16,11 +17,15 @@
     "vitest": "^3.0.3"
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^8.24.1",
+    "@typescript-eslint/parser": "^8.24.1",
+    "eslint": "^9.21.0",
+    "eslint-config-prettier": "^10.0.1",
+    "eslint-plugin-prettier": "^5.2.3",
     "prettier": "^3.5.2"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com",
     "access": "public"
   }
-  
 }

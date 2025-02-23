@@ -32,6 +32,9 @@ jobs:
       - name: Typecheck
         run: npx tsc --noEmit -p tsconfig.json
 
+      - name: Run ESLint Check
+        run: npx eslint .
+
       - name: Run tests with coverage
         run: npm test -- --coverage
 
@@ -54,6 +57,3 @@ jobs:
         run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.TOKEN_GITHUB }}
-
-
-
