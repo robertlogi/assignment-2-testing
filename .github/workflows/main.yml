@@ -40,8 +40,11 @@ jobs:
       - name: Run Prettier Check
         run: npm run prettier-check -- --write
 
-      - name: Authenticate with npm
-        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
+      # - name: Authenticate with npm
+      #   run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
+
+      - name: Bump version
+        run: npm version patch --no-git-tag-version
 
       - name: Publish to npm
         run: npm publish --access public
