@@ -41,10 +41,7 @@ jobs:
         run: npm run prettier-check -- --write
 
       - name: Authenticate with GitHub Packages
-        run: echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" > ~/.npmrc
-
-      - name: Bump version
-        run: npm version patch --no-git-tag-version
+        run: echo "//npm.pkg.github.com/:_authToken=${{ secrets.TOKEN_GITHUB }}" > ~/.npmrc
 
       - name: Publish to GitHub Packages
         run: npm publish
