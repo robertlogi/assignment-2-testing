@@ -51,7 +51,11 @@ jobs:
         run: echo "//npm.pkg.github.com/:_authToken=${{ secrets.TOKEN_GITHUB }}" > ~/.npmrc
 
       - name: Bump version
-        run: npm version patch --no-git-tag-version
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          npm version patch -m "Bump version to %s [skip ci]"
+          git push
 
       - name: Publish to GitHub Packages
         run: npm publish
