@@ -1,11 +1,21 @@
-import { getYear, add as addFn, isBefore, isSameDay as isSameDayFn, isWithinInterval } from "date-fns";
+import {
+  getYear,
+  add as addFn,
+  isBefore,
+  isSameDay as isSameDayFn,
+  isWithinInterval,
+} from "date-fns";
 import { DATE_UNIT_TYPES } from "./constants";
 
 export function getCurrentYear(): number {
   return getYear(new Date());
 }
 
-export function add(date: Date, number: number, type: DATE_UNIT_TYPES = DATE_UNIT_TYPES.DAYS): Date {
+export function add(
+  date: Date,
+  number: number,
+  type: DATE_UNIT_TYPES = DATE_UNIT_TYPES.DAYS,
+): Date {
   return addFn(date, { [type]: number });
 }
 
