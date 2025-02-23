@@ -25,7 +25,7 @@ jobs:
           npm install --legacy-peer-deps
           npm install --save-dev typescript @vitest/coverage-v8
           npm audit fix || echo "Continuing despite audit issues"
-          
+
       - name: Install TypeScript
         run: npm install --save-dev typescript
 
@@ -45,7 +45,7 @@ jobs:
         run: npm run prettier-check -- --write
 
       - name: Authenticate with GitHub Packages
-        run: echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" > ~/.npmrc
+        run: echo "//npm.pkg.github.com/:_authToken=${{ secrets.TOKEN_GITHUB }}" > ~/.npmrc
 
       - name: Bump version
         run: npm version patch --no-git-tag-version
@@ -53,7 +53,7 @@ jobs:
       - name: Publish to GitHub Packages
         run: npm publish
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.TOKEN_GITHUB }}
 
 
 
