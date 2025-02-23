@@ -1,12 +1,17 @@
 import { describe, it, expect } from "vitest";
-import { add, getCurrentYear, isWithinRange, isDateBefore, isSameDay } from "../dateUtils";
+import {
+  add,
+  getCurrentYear,
+  isWithinRange,
+  isDateBefore,
+  isSameDay,
+} from "../dateUtils";
 import { DATE_UNIT_TYPES } from "../constants";
-
 
 describe("Date Utils", () => {
   describe("getCurrentYear", () => {
     it("should return the current year", () => {
-      const result = getCurrentYear()
+      const result = getCurrentYear();
       const expectedYear = new Date().getFullYear();
       expect(result).toBe(expectedYear);
     });
@@ -54,7 +59,6 @@ describe("Date Utils", () => {
       const expectedDate = new Date("2027-01-01");
       expect(result).toEqual(expectedDate);
     });
-
   });
 
   describe("isWithinRange", () => {
@@ -99,7 +103,6 @@ describe("Date Utils", () => {
       const to = new Date("2025-03-01");
       expect(isWithinRange(date, from, to)).toBe(true);
     });
-
   });
 
   describe("isDateBefore", () => {
