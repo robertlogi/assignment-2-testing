@@ -40,5 +40,8 @@ jobs:
       - name: Run Prettier Check
         run: npm run prettier-check -- --write
 
-      - name: Publish to GitHub Packages
+      - name: Publish to npm
         run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
