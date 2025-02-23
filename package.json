@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "prettier-check": "prettier --check .",
-    "test": "vitest --coverage"
+    "test": "vitest"
   },
   "keywords": [],
   "author": "",
