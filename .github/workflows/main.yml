@@ -20,11 +20,10 @@ jobs:
           node-version: "18"
 
       - name: Install dependencies
-        run: |
-          rm -rf node_modules package-lock.json
-          npm install --legacy-peer-deps
-          npm install --save-dev typescript @vitest/coverage-v8
-          npm audit fix || echo "Continuing despite audit issues"
+        run: rm -rf node_modules package-lock.json && npm install --legacy-peer-deps && npm install --save-dev @vitest/coverage-v8 && npm audit fix || echo "Continuing despite audit issues"
+
+      - name: Install TypeScript
+        run: npm install --save-dev typescript
 
       - name: Typecheck
         run: npx tsc --noEmit -p tsconfig.json
@@ -35,8 +34,8 @@ jobs:
       - name: Upload coverage report
         uses: actions/upload-artifact@v4
         with:
-          name: coverage-report
-          path: coverage/
+          name: coverage
+          path: coverage
 
       - name: Run Prettier Check
         run: npm run prettier-check -- --write
@@ -51,3 +50,5 @@ jobs:
         run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+
